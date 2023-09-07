@@ -1,0 +1,48 @@
+ANIMAL,POLLUTANT,FACILITYTYPE,FACILITY TYPE DETAIL,EQUATION,CycleDay,Temperature,LAW,AmbRH,Windspeed,Inventory,PARAMETERSNEEDED,ei,C,UNITS,EQFUNCT
+SWINE,NH3,FARROWING,DEFAULT,eqs10,1,1,1,0,0,0,"CycleDay, Temperature, LAW",1.07,0,kg/day,"function(CycleDay,Temperature,LAW){0.6888+0.002*CycleDay+0.0006*Temperature+0.0084*LAW}"
+SWINE,NH3,GESTATION,DEFAULT,eqs11,0,1,1,0,0,0,"Temperature, LAW",1.22,0,kg/day,"function(Temperature,LAW){0.7844+0.0056*Temperature+0.0073*LAW}"
+SWINE,NH3,GESTATION,SHALLOW,eqs12,0,1,1,0,0,0,"Temperature, LAW",1.07,0,kg/day,"function(Temperature,LAW){0.3075+0.0118*Temperature+0.0079*LAW}"
+SWINE,NH3,GESTATION,DEEP,eqs13,0,1,1,0,0,0,"Temperature, LAW",1.07,0,kg/day,"function(Temperature,LAW){0.8348+0.0118*Temperature+0.0079*LAW}"
+SWINE,H2S,FARROWING,DEFAULT,eqs14,1,0,1,0,0,0,"CycleDay, LAW",1.46,3,grams/day,"function(CycleDay,LAW){2.1423+0.1298*CycleDay+0.0614*LAW}"
+SWINE,H2S,GESTATION,DEFAULT,eqs15,0,1,1,0,0,0,"Temperature, LAW",2.11,29,grams/day,"function(Temperature,LAW){2.0773+0.0035*Temperature+0.0199*LAW}"
+SWINE,H2S,GESTATION,SHALLOW,eqs16,0,1,1,0,0,0,"Temperature, LAW",1.28,29,grams/day,"function(Temperature,LAW){2.1305+0.0038*Temperature+0.0196*LAW}"
+SWINE,H2S,GESTATION,DEEP,eqs17,0,1,1,0,0,0,"Temperature, LAW",1.28,29,grams/day,"function(Temperature,LAW){3.1785+0.0038*Temperature+0.0196*LAW}"
+SWINE,PM10,FARROWING,DEFAULT,eqs18,1,0,1,1,0,0,"CycleDay, LAW, AmbRH",1.05,2,grams/day,"function(CycleDay,LAW,AmbRH){2.49+0.0558*CycleDay+0.1063*LAW-0.0034*AmbRH} "
+SWINE,PM10,GESTATION,DEFAULT,eqs19,0,0,1,1,0,0,"LAW, AmbRH",1.1,0,grams/day,"function(AmbRH,LAW){5.1868-0.0078*AmbRH+0.0055*LAW}"
+SWINE,PM2.5,FARROWING,DEFAULT,eqs20,1,0,1,0,0,0,"CycleDay, LAW",0.86,6,grams/day,"function(CycleDay,LAW){-1.2146+0.0759*CycleDay+0.2564*LAW}"
+SWINE,PM2.5,GESTATION,DEFAULT,eqs21,0,0,1,0,0,0,LAW,1.01,114,grams/day,function(LAW){4.88715+0.0007*LAW}
+SWINE,TSP,FARROWING,DEFAULT,eqs22,1,0,1,1,0,0,"CycleDay, LAW, AmbRH",1.17,0,grams/day,"function(CycleDay,LAW,AmbRH){2.8589+0.0706*CycleDay+0.1473*LAW-0.0049*AmbRH}"
+SWINE,TSP,GESTATION,DEFAULT,eqs23,0,0,1,1,0,0,"LAW, AmbRH",1.02,0,grams/day,"function(AmbRH,LAW){5.53397+0.008*AmbRH+0.0066*LAW}"
+SWINE,NH3,FINISHING,DEFAULT,eqs24,0,1,1,0,0,0,"Temperature, LAW",1.04,1,kg/day,"function(Temperature,LAW){1.2363+0.00895*Temperature+0.0089*LAW}"
+SWINE,NH3,FINISHING,SHALLOW,eqs25,0,1,1,0,0,0,"Temperature, LAW",1.06,1,kg/day,"function(Temperature,LAW){1.1422+0.0091*Temperature+0.0085*LAW}"
+SWINE,NH3,FINISHING,DEEP,eqs26,0,1,1,0,0,0,"Temperature, LAW",1.06,1,kg/day,"function(Temperature,LAW){1.3424+0.0091*Temperature+0.0085*LAW}"
+SWINE,H2S,FINISHING,DEFAULT,eqs27,0,1,1,0,0,0,"Temperature, LAW",2.37,13,grams/day,"function(Temperature,LAW){4.082-0.0066*Temperature+0.0172*LAW}"
+SWINE,H2S,FINISHING,SHALLOW,eqs28,0,1,1,0,0,0,"Temperature, LAW",1.53,13,grams/day,"function(Temperature,LAW){4.1905-0.0055*Temperature+0.0133*LAW}"
+SWINE,H2S,FINISHING,DEEP,eqs29,0,1,1,0,0,0,"Temperature, LAW",1.53,13,grams/day,"function(Temperature,LAW){4.9916+0.0055*Temperature+0.0133*LAW}"
+SWINE,PM10,FINISHING,DEFAULT,eqs30,0,0,1,1,0,0,"LAW, AmbRH",1.05,67,grams/day,"function(AmbRH,LAW){5.5039-0.0094*AmbRH+0.0104*LAW}"
+SWINE,PM2.5,FINISHING,DEFAULT,eqs31,0,0,1,1,0,0,"LAW, AmbRH",1.08,10,grams/day,"function(AmbRH,LAW){2.4954-0.0023*AmbRH+0.01095*LAW}"
+SWINE,TSP,FINISHING,DEFAULT,eqs32,0,0,1,1,0,0,"LAW, AmbRH",1.1,0,grams/day,"function(AmbRH,LAW){6.266-0.0088*AmbRH+0.0118*LAW}"
+SWINE,NH3,OPENSOURCE,BreedingGestationLagoon,eqs33,0,1,0,0,1,0,"Temperature, windspeed",1.03,2,grams/day,"function(Temperature,Windspeed){0.5821+0.0557*Temperature+0.0914*Windspeed}"
+SWINE,NH3,OPENSOURCE,GrowFinishLagoon,eqs34,0,1,0,0,1,0,"Temperature, windspeed",1.1,0,grams/day,"function(Temperature,Windspeed){-0.6801+0.0854*Temperature+0.1319*Windspeed}"
+SWINE,NH3,OPENSOURCE,Basin,eqs35,0,1,0,0,0,0,Temperature,1.17,2,grams/day,function(Temperature){2.5049+0.01171*Temperature}
+SWINE,H2S,OPENSOURCE,BreedingGestationLagoon,eqs36,0,0,0,0,1,0,windspeed,1.48,100,mg/day/m2,function(Windspeed){4.6796+0.11516*Windspeed}
+SWINE,H2S,OPENSOURCE,GrowFinishLagoon,eqs37,0,1,0,0,1,0,"Temperature, windspeed",2.04,7,mg/day/m2,function(Windspeed){3.6948+0.279*Windspeed}
+SWINE,H2S,OPENSOURCE,Basin,eqs38,0,1,0,0,0,0,Temperature,1.12,1,grams/day/m2,function(Temperature){0.4689+0.027*Temperature}
+DAIRY,NH3,MechanicallyVentilated,Flush,eqd1,0,1,0,0,0,1,"Temperature, Inventory",1.03966,3,kg/day,function(){1+2}
+DAIRY,NH3,MechanicallyVentilated,Scrape,eqd2,0,1,0,0,0,1,"Temperature, Inventory",1.03966,3,kg/day,function(){1+2}
+DAIRY,H2S,MechanicallyVentilated,Flush,eqd3,0,1,0,0,0,1,"Temperature, Inventory",1.11434,628,grams/day,function(){1+2}
+DAIRY,H2S,MechanicallyVentilated,Scrape,eqd4,0,1,0,0,0,1,"Temperature, Inventory",1.11434,628,grams/day,function(){1+2}
+DAIRY,NH3,Milking,DEFAULT,eqd5,0,1,0,0,0,0,Temperature,1.21693,3,grams/day/hd,function(){1+2}
+DAIRY,H2S,Milking,DEFAULT,eqd6,0,1,0,0,0,0,Temperature,1.30119,628,kg/day/hd,function(){1+2}
+DAIRY,PM10,Milking,DEFAULT,eqd7,0,1,0,1,0,0,"Temperature, AmbRH",1.0057,2200,grams/day/hd,function(){1+2}
+DAIRY,PM2.5,Milking,DEFAULT,eqd8,0,1,0,0,0,0,Temperature,1.00796,680,grams/day/hd,function(){1+2}
+DAIRY,TSP,Milking,DEFAULT,eqd9,0,1,0,1,0,0,"Temperature, AmbRH",1.0311,978,grams/day/hd,function(){1+2}
+DAIRY,NH3,NaturallyVentilated,DEFAULT,eqd10,0,0,0,0,1,1,"windspeed, Inventory",1.46499,3,grams/day,function(){1+2}
+DAIRY,H2S,NaturallyVentilated,DEFAULT,eqd11,0,0,0,0,1,1,"windspeed, Inventory",1.23366,628,kg/day,function(){1+2}
+DAIRY,PM10,NaturallyVentilated,DEFAULT,eqd12,0,1,0,1,1,1,"Temperature, AmbRH, windspeed, Inventory",1.27211,2200,grams/day,function(){1+2}
+DAIRY,PM2.5,NaturallyVentilated,DEFAULT,eqd13,0,1,0,1,1,1,"Temperature, AmbRH, windspeed, Inventory",1.33005,680,grams/day,function(){1+2}
+DAIRY,TSP,NaturallyVentilated,DEFAULT,eqd14,0,1,0,1,1,1,"Temperature, AmbRH, windspeed, Inventory",1.25126,978,grams/day,function(){1+2}
+DAIRY,NH3,Lagoon,DEFAULT,eqd15,0,1,0,0,0,0,Temperature,1.0079,3,kg/day/m2,function(){1+2}
+DAIRY,H2S,Lagoon,DEFAULT,eqd16,0,1,0,0,0,0,Temperature,1.03006,3,kg/day/m2,function(){1+2}
+DAIRY,NH3,Corrals,DEFAULT,eqd17,0,1,0,1,1,0,"Temperature, AmbRH, windspeed",1.0066,3,grams/day/m2/thousand hd,function(){1+2}
+DAIRY,H2S,Corrals,DEFAULT,eqd18,0,0,0,1,0,0,AmbRH,1.00007,3,grams/day/m2/thousand hd,function(){1+2}

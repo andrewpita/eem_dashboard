@@ -1,0 +1,53 @@
+---
+output: html_document
+html_document:
+    mathjax: "default"
+---
+
+### OVERVIEW
+
+The U.S. Environmental Protection Agency has published [Draft Air Emissions Estimating Methodologies (EEMs) for Animal Feeding Operations](https://www.epa.gov/afos-air/draft-air-emissions-estimating-methodologies-animal-feeding-operations). These methodologies predict emissions of ammonia (NH3), hydrogen sulfide (H2S), Fine Particulate Matter (PM2.5), Particulate Matter (PM10), and Total Suspended Particulates (TSP) from swine, dairy and poultry facilities.
+
+The draft EEMs include 29 models for swine facilities, 18 models for dairy facilities, 15 models for poultry egg-laying houses and manure sheds, and 5 models for poultry broiler operations. Each model predicts one type of pollutant for one specific type of facility (e.g. ammonia from a shallow pit barn with finishing swine, or hydrogen sulfide from a mechanically ventilated dairy barn using scrape manure management).
+
+### HOW CAN YOU USE THE DASHBOARD? 
+
+1. This dashboard allows users to enter their facility type and pollutant of interest to determine the appropriate EEM. Upon identifying the relevant EEM to use, the dashboard provides a list of parameters required to evaluate the function. The user may provide these values to get an emissions estimate along with a summary of the data over the provided time period.
+Use the dropdown menus on the left panel to select a type of animal and pollutant of interest. Depending on your selections, there will be additional options for Facility Type (e.g. Farrowing, Gestation, Finishing, or Open Source for Swine). For some facility types, you may also specify additional details. For example, for some swine facilities you may specify deep or shallow pit manure storage, poultry layer facilities require selection among high-rise, manure-belt, and manure-shed, and some dairy facilities require selection among flush or scrape manure management. Detailed information regarding these options can be found in [EPA’s draft models](https://www.epa.gov/afos-air/draft-air-emissions-estimating-methodologies-animal-feeding-operations).
+
+2. Once you have selected a specific facility type and pollutant of interest, the **UPLOAD** module in the main panel will identify which inputs are required to evaluate the relevant EEM for this facility type and pollutant.
+Within the **UPLOAD** module in the main panel, please upload input data with the required inputs in a CSV file. To create a CSV file you may use Google Sheets, Excel, or other software and save as a comma separated value file (CSV). Each row of your table will correspond to the required parameters for a single day. Each column of your table should correspond to a given input required by the EEMs. It is okay if you have additional columns.
+An example table is shown below. You will only need the columns required by your EEM. You may also download an example dataset [HERE](https://drive.google.com/file/d/19TyFwL2NRcCEebuzvQ7za5ohV1sgqmKk/view?usp=sharing).
+
+- Depending on the EEM you select, you may need to provide facility-specific data, through some combination of the below. Please ensure that your data is provided in the appropriate units requested.
+  - LAW, live animal weight in thousands of kilograms (Mg).
+  - CycleDay, the day of the animal placement cycle (e.g. the day the sow is moved to the barn is cycle day 1)
+  - Inventory (thousand-heads, i.e. divide number of animals by 1000).
+- Depending on the EEM you select, you may also need to provide meteorological data. EPA has used data from the [National Centers for Environmental Information (NCEI)](https://www.ncdc.noaa.gov/cdo-web/) for these inputs, but other weather data sources may be used as well. In the future, the dashboard will automatically input data from NCEI if possible.
+  - Temperature, ambient temperature in celsius.
+  - AmbRH, average daily relative humidity (percent of water vapor in the air). 
+  - Windspeed, average daily wind speed in meters per second (m/s) at a height of 2.5 meters. 
+- You will need to specify time in some way, e.g. a column labeled with the date.
+
+3. Upon uploading your data, the dashboard will ask you to assign columns in your dataset to match the requested variables. For example, if your temperature values are listed in a column labeled “Temperature”, you would select this column under Choose Temperature on the MODEL INPUT PREP module. (This prevents the dashboard from making assumptions about your data and means that your column names in your input file can be whatever you want.)
+4. You may view a preview of your uploaded data in the INPUT DATA PREVIEW module.
+5. Once you have assigned all required variables, the dashboard will display emissions estimates in the ESTIMATED EMISSIONS TABLE. This table shows emissions and units for each row of input data provided. You may download these data using the buttons at the bottom of the table, selecting among CSV, Excel, or PDF.
+6. The EMISSIONS SUMMARY DATA module provides summary statistics on your emissions data. Total emissions provides the sum of emissions across all rows. Mean emissions provides the average of emissions across all rows. Max emissions provides the highest value for emissions across all rows. You may also provide a threshold value to find a count of days for which emissions exceed a given value.
+7. The ESTIMATED EMISSIONS TIME SERIES displays a plot of emissions over time.
+
+Notes:  (1) In some cases, EPA’s models return negative values. In this case, the dashboard reports a value of zero. (2) See Section 12 [HERE](https://www.epa.gov/sites/default/files/2020-08/documents/development_of_emissions_estimating_methodologies_for_swine_barns_and_lagoons.pdf) or Section 8.1 [HERE](https://www.epa.gov/system/files/documents/2022-07/Dairy_PreliminaryDraft_report.pdf) for example calculations from EPA.
+
+### HOW DO THE EEMs WORK?
+
+Each EEM follows the general format shown below:
+
+
+$ln(Emissions) = [Coefficient1] * [Meteorological or Facility Data] + [Coefficient2] * [Meteorological or Facility Data] + … + Intercept$
+
+
+The natural log of emissions is equal to a coefficient provided by EPA multiplied by a user-provided input reflecting meteorology or facility data plus another coefficient provided by EPA multiplied by another user-provided input reflecting meteorology or facility data, and so on. The simplest models only require one input, while others may require up to four inputs.
+
+The general equation provides an estimate of the natural log of emissions for a single date. To find emissions in units directly reflecting mass, the value from this equation must be back-transformed using a second set of values provided by EPA (See [Table 11-1 for Swine]((https://www.epa.gov/sites/default/files/2020-08/documents/development_of_emissions_estimating_methodologies_for_swine_barns_and_lagoons.pdf)), [Table 7-1 for Poultry Egg-Layer Houses and Manure Sheds](https://www.epa.gov/system/files/documents/2021-08/development_of_emissions_estimating_methodologies_for_egg_layer_houses_and_manure_sheds.pdf), [Table 7-1 for Broilers](https://www.epa.gov/system/files/documents/2021-08/development_of_emissions_estimating_methodologies_for_broilers.pdf), and [Table 7-1 for Dairy](https://www.epa.gov/system/files/documents/2022-07/Dairy_PreliminaryDraft_report.pdf); Note that three broiler models do not require back-transformation.)
+
+Both steps (calculating the log of emissions and back-transforming to raw units) are automated in this dashboard.
+

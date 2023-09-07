@@ -1,0 +1,68 @@
+ANIMAL,POLLUTANT,FACILITYTYPE,FACILITY TYPE DETAIL,EQUATION,CycleDay,Temperature,LAW,AmbRH,Windspeed,Inventory,PARAMETERSNEEDED,ei,C,k,UNITS,NOTES,EQFUNCT
+SWINE,NH3,FARROWING,DEFAULT,eqs10,1,1,1,0,0,0,"CycleDay, Temperature, LAW",1.07,0,999,kg/day,NA,"function(CycleDay,Temperature,LAW){0.6888+0.002*CycleDay+0.0006*Temperature+0.0084*LAW}"
+SWINE,NH3,GESTATION,DEFAULT,eqs11,0,1,1,0,0,0,"Temperature, LAW",1.22,0,999,kg/day,NA,"function(Temperature,LAW){0.7844+0.0056*Temperature+0.0073*LAW}"
+SWINE,NH3,GESTATION,SHALLOW,eqs12,0,1,1,0,0,0,"Temperature, LAW",1.07,0,999,kg/day,NA,"function(Temperature,LAW){0.3075+0.0118*Temperature+0.0079*LAW}"
+SWINE,NH3,GESTATION,DEEP,eqs13,0,1,1,0,0,0,"Temperature, LAW",1.07,0,999,kg/day,NA,"function(Temperature,LAW){0.8348+0.0118*Temperature+0.0079*LAW}"
+SWINE,H2S,FARROWING,DEFAULT,eqs14,1,0,1,0,0,0,"CycleDay, LAW",1.46,3,999,grams/day,NA,"function(CycleDay,LAW){2.1423+0.1298*CycleDay+0.0614*LAW}"
+SWINE,H2S,GESTATION,DEFAULT,eqs15,0,1,1,0,0,0,"Temperature, LAW",2.11,29,999,grams/day,NA,"function(Temperature,LAW){2.0773+0.0035*Temperature+0.0199*LAW}"
+SWINE,H2S,GESTATION,SHALLOW,eqs16,0,1,1,0,0,0,"Temperature, LAW",1.28,29,999,grams/day,NA,"function(Temperature,LAW){2.1305+0.0038*Temperature+0.0196*LAW}"
+SWINE,H2S,GESTATION,DEEP,eqs17,0,1,1,0,0,0,"Temperature, LAW",1.28,29,999,grams/day,NA,"function(Temperature,LAW){3.1785+0.0038*Temperature+0.0196*LAW}"
+SWINE,PM10,FARROWING,DEFAULT,eqs18,1,0,1,1,0,0,"CycleDay, LAW, AmbRH",1.05,2,999,grams/day,NA,"function(CycleDay,LAW,AmbRH){2.49+0.0558*CycleDay+0.1063*LAW-0.0034*AmbRH} "
+SWINE,PM10,GESTATION,DEFAULT,eqs19,0,0,1,1,0,0,"LAW, AmbRH",1.1,0,999,grams/day,NA,"function(AmbRH,LAW){5.1868-0.0078*AmbRH+0.0055*LAW}"
+SWINE,PM2.5,FARROWING,DEFAULT,eqs20,1,0,1,0,0,0,"CycleDay, LAW",0.86,6,999,grams/day,NA,"function(CycleDay,LAW){-1.2146+0.0759*CycleDay+0.2564*LAW}"
+SWINE,PM2.5,GESTATION,DEFAULT,eqs21,0,0,1,0,0,0,LAW,1.01,114,999,grams/day,NA,function(LAW){4.88715+0.0007*LAW}
+SWINE,TSP,FARROWING,DEFAULT,eqs22,1,0,1,1,0,0,"CycleDay, LAW, AmbRH",1.17,0,999,grams/day,NA,"function(CycleDay,LAW,AmbRH){2.8589+0.0706*CycleDay+0.1473*LAW-0.0049*AmbRH}"
+SWINE,TSP,GESTATION,DEFAULT,eqs23,0,0,1,1,0,0,"LAW, AmbRH",1.02,0,999,grams/day,NA,"function(AmbRH,LAW){5.53397+0.008*AmbRH+0.0066*LAW}"
+SWINE,NH3,FINISHING,DEFAULT,eqs24,0,1,1,0,0,0,"Temperature, LAW",1.04,1,999,kg/day,NA,"function(Temperature,LAW){1.2363+0.00895*Temperature+0.0089*LAW}"
+SWINE,NH3,FINISHING,SHALLOW,eqs25,0,1,1,0,0,0,"Temperature, LAW",1.06,1,999,kg/day,NA,"function(Temperature,LAW){1.1422+0.0091*Temperature+0.0085*LAW}"
+SWINE,NH3,FINISHING,DEEP,eqs26,0,1,1,0,0,0,"Temperature, LAW",1.06,1,999,kg/day,NA,"function(Temperature,LAW){1.3424+0.0091*Temperature+0.0085*LAW}"
+SWINE,H2S,FINISHING,DEFAULT,eqs27,0,1,1,0,0,0,"Temperature, LAW",2.37,13,999,grams/day,NA,"function(Temperature,LAW){4.082-0.0066*Temperature+0.0172*LAW}"
+SWINE,H2S,FINISHING,SHALLOW,eqs28,0,1,1,0,0,0,"Temperature, LAW",1.53,13,999,grams/day,NA,"function(Temperature,LAW){4.1905-0.0055*Temperature+0.0133*LAW}"
+SWINE,H2S,FINISHING,DEEP,eqs29,0,1,1,0,0,0,"Temperature, LAW",1.53,13,999,grams/day,NA,"function(Temperature,LAW){4.9916+0.0055*Temperature+0.0133*LAW}"
+SWINE,PM10,FINISHING,DEFAULT,eqs30,0,0,1,1,0,0,"LAW, AmbRH",1.05,67,999,grams/day,NA,"function(AmbRH,LAW){5.5039-0.0094*AmbRH+0.0104*LAW}"
+SWINE,PM2.5,FINISHING,DEFAULT,eqs31,0,0,1,1,0,0,"LAW, AmbRH",1.08,10,999,grams/day,NA,"function(AmbRH,LAW){2.4954-0.0023*AmbRH+0.01095*LAW}"
+SWINE,TSP,FINISHING,DEFAULT,eqs32,0,0,1,1,0,0,"LAW, AmbRH",1.1,0,999,grams/day,NA,"function(AmbRH,LAW){6.266-0.0088*AmbRH+0.0118*LAW}"
+SWINE,NH3,OPENSOURCE,BreedingGestationLagoon,eqs33,0,1,0,0,1,0,"Temperature, Windspeed",1.03,2,999,grams/day,NA,"function(Temperature,Windspeed){0.5821+0.0557*Temperature+0.0914*Windspeed}"
+SWINE,NH3,OPENSOURCE,GrowFinishLagoon,eqs34,0,1,0,0,1,0,"Temperature, Windspeed",1.1,0,999,grams/day,NA,"function(Temperature,Windspeed){-0.6801+0.0854*Temperature+0.1319*Windspeed}"
+SWINE,NH3,OPENSOURCE,Basin,eqs35,0,1,0,0,0,0,Temperature,1.17,2,999,grams/day,NA,function(Temperature){2.5049+0.01171*Temperature}
+SWINE,H2S,OPENSOURCE,BreedingGestationLagoon,eqs36,0,0,0,0,1,0,Windspeed,1.48,100,999,mg/day/m2,NA,function(Windspeed){4.6796+0.11516*Windspeed}
+SWINE,H2S,OPENSOURCE,GrowFinishLagoon,eqs37,0,1,0,0,1,0,"Temperature, Windspeed",2.04,7,999,mg/day/m2,NA,function(Windspeed){3.6948+0.279*Windspeed}
+SWINE,H2S,OPENSOURCE,Basin,eqs38,0,1,0,0,0,0,Temperature,1.12,1,999,grams/day/m2,NA,function(Temperature){0.4689+0.027*Temperature}
+DAIRY,NH3,MechanicallyVentilated,Flush,eqd1,0,1,0,0,0,1,"Temperature, Inventory",1.03966,3,999,kg/day,NA,"function(Inventory,Temperature){1.746585+1.773832*Inventory}"
+DAIRY,NH3,MechanicallyVentilated,Scrape,eqd2,0,1,0,0,0,1,"Temperature, Inventory",1.03966,3,999,kg/day,NA,"function(Inventory,Temperature){1.864935+1.773832*Inventory+0.029586*Temperature}"
+DAIRY,H2S,MechanicallyVentilated,Flush,eqd3,0,1,0,0,0,1,"Temperature, Inventory",1.11434,628,999,grams/day,NA,"function(Inventory,Temperature){7.406887+0.86173*Inventory+ 0.012786*Temperature}"
+DAIRY,H2S,MechanicallyVentilated,Scrape,eqd4,0,1,0,0,0,1,"Temperature, Inventory",1.11434,628,999,grams/day,NA,"function(Inventory,Temperature){6.287004+0.86173*Inventory+0.012786*Temperature}"
+DAIRY,NH3,Milking,DEFAULT,eqd5,0,1,0,0,0,0,Temperature,1.21693,3,999,grams/day/hd,NA,function(Temperature){2.505637+0.046434*Temperature}
+DAIRY,H2S,Milking,DEFAULT,eqd6,0,1,0,0,0,0,Temperature,1.30119,628,999,kg/day/hd,NA,function(Temperature){6.898188+0.024053*Temperature}
+DAIRY,PM10,Milking,DEFAULT,eqd7,0,1,0,1,0,0,"Temperature, AmbRH",1.0057,2200,999,grams/day/hd,NA,"function(Temperature,AmbRH){8.042215+0.006791*Temperature-0.003552*AmbRH}"
+DAIRY,PM2.5,Milking,DEFAULT,eqd8,0,1,0,0,0,0,Temperature,1.00796,680,999,grams/day/hd,NA,function(Temperature){6.58377+0.006698*Temperature}
+DAIRY,TSP,Milking,DEFAULT,eqd9,0,1,0,1,0,0,"Temperature, AmbRH",1.0311,978,999,grams/day/hd,NA,"function(Temperature,AmbRH){7.457268+0.010997*Temperature-0.003639*AmbRH}"
+DAIRY,NH3,NaturallyVentilated,DEFAULT,eqd10,0,0,0,0,1,1,"Windspeed, Inventory",1.46499,3,999,grams/day,NA,"function(Inventory,Windspeed){0.188357+3.451939*Inventory+0.048153*Windspeed}"
+DAIRY,H2S,NaturallyVentilated,DEFAULT,eqd11,0,0,0,0,1,1,"Windspeed, Inventory",1.23366,628,999,kg/day,NA,"function(Inventory,Windspeed){6.541057+0.587702*Inventory+0.062678*Windspeed}"
+DAIRY,PM10,NaturallyVentilated,DEFAULT,eqd12,0,1,0,1,1,1,"Temperature, AmbRH, Windspeed, Inventory",1.27211,2200,999,grams/day,NA,"function(Inventory,Temperature,AmbRH,Windspeed){7.64258+1.525009*Inventory+0.011864*Temperature-0.01521*AmbRH+0.173698*Windspeed}"
+DAIRY,PM2.5,NaturallyVentilated,DEFAULT,eqd13,0,1,0,1,1,1,"Temperature, AmbRH, Windspeed, Inventory",1.33005,680,999,grams/day,NA,"function(Inventory,Temperature,AmbRH,Windspeed){7.068797-0.220453*Inventory+0.01121*Temperature-0.003808*AmbRH+0.218968*Windspeed}"
+DAIRY,TSP,NaturallyVentilated,DEFAULT,eqd14,0,1,0,1,1,1,"Temperature, AmbRH, Windspeed, Inventory",1.25126,978,999,grams/day,NA,"function(Inventory,Temperature,AmbRH,Windspeed){7.868847+2.953893*Inventory+0.034508*Temperature-0.033997*AmbRH+0.248191*Windspeed}"
+DAIRY,NH3,Lagoon,DEFAULT,eqd15,0,1,0,0,0,0,Temperature,1.0079,3,999,kg/day/m2,NA,function(Temperature){1.396734+0.027201*Temperature}
+DAIRY,H2S,Lagoon,DEFAULT,eqd16,0,1,0,0,0,0,Temperature,1.03006,3,999,kg/day/m2,NA,function(Temperature){1.189272+0.010557*Temperature}
+DAIRY,NH3,Corrals,DEFAULT,eqd17,0,1,0,1,1,0,"Temperature, AmbRH, Windspeed",1.0066,3,999,grams/day/m2/thousand hd,NA,"function(Temperature,AmbRH,Windspeed){1.053805+0.004993*Temperature+0.0031*AmbRH+0.017832*Windspeed}"
+DAIRY,H2S,Corrals,DEFAULT,eqd18,0,0,0,1,0,0,AmbRH,1.00007,3,999,grams/day/m2/thousand hd,NA,function(AmbRH){2.404792+0.007177*AmbRH}
+POULTRY,NH3,Broiler,DEFAULT,eqb1,0,1,1,1,0,0,"Temperature, AmbRH, LAW",1.10605,2,999,kg,NA,"function(LAW,Temperature,AmbRH){1.60581+0.008532*LAW+0.020739*Temperature+0.004038*AmbRH}"
+POULTRY,H2S,Broiler,DEFAULT,eqb2,0,1,1,1,0,0,"Temperature, AmbRH, LAW",1.32433,10,999,g,NA,"function(LAW,Temperature,AmbRH){2.824278+0.016214*LAW+0.015048*Temperature+0.004429*AmbRH}"
+POULTRY,PM10,Broiler,DEFAULT,eqb3,0,1,1,1,0,0,"Temperature, AmbRH, LAW",NA,NA,999,g,NA,"function(LAW,Temperature,AmbRH){397.28057+40.872002*LAW+10.401892*Temperature-6.584463*AmbRH}"
+POULTRY,PM2.5,Broiler,DEFAULT,eqb4,0,1,1,1,0,0,"Temperature, AmbRH, LAW",NA,NA,999,g,NA,"function(LAW,Temperature,AmbRH){15.776704+4.087002*LAW+1.308433*Temperature-0.464143*AmbRH}"
+POULTRY,TSP,Broiler,DEFAULT,eqb5,0,1,1,1,0,0,"Temperature, AmbRH, LAW",NA,NA,999,g,NA,"function(LAW,Temperature,AmbRH){1518.9199+85.598315*LAW+22.632906*Temperature-21.28833*AmbRH}"
+POULTRY,NH3,Layer,HighRise,eql1,0,1,0,1,0,1,"Temperature, AmbRH, Inventory",1.58238,0,999,kg,NA,"function(Inventory,Temperature,AmbRH){2.6598+0.0059*Inventory+0.0387*Temperature+0.0018*AmbRH}"
+POULTRY,H2S,Layer,HighRise,eql2,0,1,0,1,0,1,"Temperature, AmbRH, Inventory",1.24359,15,999,g,NA,"function(Inventory,Temperature,AmbRH){2.7231+0.0098*Inventory+0.0210*Temperature+0.0038*AmbRH}"
+POULTRY,PM10,Layer,HighRise,eql3,0,1,0,1,0,1,"Temperature, AmbRH, Inventory",1.11745,494,999,g,NA,"function(Inventory,Temperature,AmbRH){6.8702+0.0077*Inventory+0.0145*Temperature-0.0030*AmbRH}"
+POULTRY,PM2.5,Layer,HighRise,eql4,0,1,0,1,0,1,"Temperature, AmbRH, Inventory",1.51089,37,999,g,NA,"function(Inventory,Temperature,AmbRH){4.6219+0.0080*Inventory+0.0510*Temperature-0.0181*AmbRH}"
+POULTRY,TSP,Layer,HighRise,eql5,0,1,0,1,0,1,"Temperature, AmbRH, Inventory",1.11429,0,999,g,NA,"function(Inventory,Temperature,AmbRH){7.5995+0.0079*Inventory+0.0137*Temperature-0.0058*AmbRH }"
+POULTRY,NH3,Layer,ManureBelt,eql6,0,1,0,1,0,1,"Temperature, AmbRH, Inventory",1.27315,0,999,kg,NA,"function(Inventory,Temperature,AmbRH){2.4392+0.0047*Inventory+0.0294*Temperature+0.0019*AmbRH}"
+POULTRY,H2S,Layer,ManureBelt,eql7,0,1,0,1,0,1,"Temperature, AmbRH, Inventory",1.09812,39,999,g,NA,"function(Inventory,Temperature,AmbRH){3.7391+0.0073*Inventory+0.0222*Temperature+0.0048*AmbRH}"
+POULTRY,PM10,Layer,ManureBelt,eql8,0,0,0,0,0,1,Inventory,1.45218,1045,999,g,NA,function(Inventory){6.631005+0.007205*Inventory}
+POULTRY,PM2.5,Layer,ManureBelt,eql9,0,0,0,0,0,1,Inventory,2.97703,108,999,g,NA,function(Inventory){-127.4489+0.534577*Inventory}
+POULTRY,TSP,Layer,ManureBelt,eql10,0,0,0,0,0,1,Inventory,1.34146,696,999,g,NA,function(Inventory){6.936206+0.00987*Inventory}
+POULTRY,NH3,Layer,ManureShed,eql11,0,1,0,0,0,1,"Temperature, Inventory",1.28615,1.3,999,kg,Inventorywith5daylag,"function(Inventory,Temperature){-0.194945+0.003927*Inventory-0.013752*Temperature}"
+POULTRY,H2S,Layer,ManureShed,eql12,0,1,0,0,0,1,"Temperature, Inventory",1.36619,6,999,g,Inventorywith5daylag,"function(Inventory,Temperature){1.295775+0.004976*Inventory-0.024164*Temperature}"
+POULTRY,PM10,Layer,ManureShed,eql13,0,0,0,0,0,1,Inventory,1.68902,54,999,g,Inventorywith5daylag,function(Inventory){4.5366+0.000732*Inventory}
+POULTRY,PM2.5,Layer,ManureShed,eql14,0,0,0,0,0,1,Inventory,1.68697,0,999,g,Inventorywith5daylag,function(Inventory){-30.57734+0.067599*Inventory}
+POULTRY,TSP,Layer,ManureShed,eql15,0,0,0,0,0,1,Inventory,2.01361,30,999,g,Inventorywith5daylag,function(Inventory){4.041666+0.002286*Inventory}
